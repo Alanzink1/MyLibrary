@@ -1,0 +1,23 @@
+<script>
+
+    function bookSubmit(){
+
+        let bookName = document.getElementById('book-input').value;
+        let bookURL = document.getElementById('url-book-input').value;
+        fetch("http://localhost:8080/books", {
+        method: "POST",
+        body: JSON.stringify({
+            bookName,
+            bookURL,
+            completed: false
+        }),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+        });
+        
+        location.reload();
+
+    }
+
+</script>
